@@ -1,0 +1,38 @@
+<style>
+  :host{display: block;text-align: left;font-size: 0;padding: 10px 0;}
+  :host([dark]){background: black;}
+  .logo{display: inline-block; width: 162px;height:50px;background: url(wmre-nav-logo.png) no-repeat center/cover;position: relative;z-index: 1;left: 5px;}
+  .links{float:right;font-size: 16px;}
+  .links a{color: white;text-decoration: none;margin:8px 16px;display: inline-block;}
+  .links :last-child{background: url(search.png) no-repeat center/cover;height: 18px;border: 0;cursor: pointer;width: 16px;margin: 8px 16px;position: relative;top:3px}
+  .menu{float:right;color: white;font-size: 25px;line-height: 25px;display: none;    position: relative;right: 5px;}
+  .menu-screen{position: absolute;width: 100vw;height: 100vh;background: black;display: none;top:0;font-size: 16px;}
+  .menu-screen a{color: white;text-decoration: none;margin: 20px auto;display: block;width: 100px;}
+  .menu-screen a:first-of-type{margin-top: 140px;}
+  .menu-close{z-index: 1;position: absolute;top:5px;right:5px;color: white;font-size: 50px;line-height: 20px;}
+
+  @media (max-width: 600px) {
+    .links{display: none}
+    .logo{width: 113px;height: 35px;}
+    .menu{display: block;} 
+  }
+
+</style>
+<a class="logo" href="/"></a>
+<div class="links">
+  <a href="about" onclick="navigate(event,this)">About WMRE</a>
+  <a href="projects" onclick="navigate(event,this)">Projects</a>
+  <a href="whatwedo" onclick="navigate(event,this)">What we do</a>
+  <a href="news" onclick="navigate(event,this)">News</a>
+  <a href="contact" onclick="navigate(event,this)">Contact us</a>
+  <button></button>
+</div>
+<div class="menu" onclick="document.body.style.overflowY = 'hidden';this.nextElementSibling.style.display='block'">&#9776;</div>
+<div class="menu-screen">
+  <div class="menu-close" onclick="document.body.style.overflowY = 'auto';this.parentElement.style.display='none'">&Cross;</div>
+  <a href="about" onclick="navigate(event,this)">About WMRE</a>
+  <a href="projects" onclick="navigate(event,this)">Projects</a>
+  <a href="whatwedo" onclick="navigate(event,this)">What we do</a>
+  <a href="news" onclick="navigate(event,this)">News</a>
+  <a href="contact" onclick="navigate(event,this)">Contact us</a>    
+</div>
